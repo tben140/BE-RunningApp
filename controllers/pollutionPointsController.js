@@ -3,6 +3,8 @@ const {
   PollutionPointsModel
 } = require("../models/mongoosePollutionPointsModel.js");
 
+//Format pollution points data so that the aqi scores are calculated, add as a util function
+
 const seedPollutionPoints = (req, res) => {
   pollutionPointsData.forEach(pollutionPoint => {
     const newPollutionPoint = new PollutionPointsModel(pollutionPoint);

@@ -5,14 +5,12 @@ const app = express();
 const port = process.env.PORT || 8080;
 const mongoose = require("mongoose");
 
+
+const { seedPollutionPoints } = require('./controllers/pollutionPointsController')
+
+
 const apiRouter = require("./routes/apiRouter");
 
-const {
-  aqiCalculate,
-  seedPollutionPoints,
-  calcLatLong
-} = require("./utils/pollutionPointsUtils.js");
-const { pollutionPointsData } = require("./db/data/development-data/index.js");
 
 app.use(require("./routes/apiRouter.js"));
 app.use(express.json());
@@ -24,10 +22,11 @@ app.listen(port, () => {
   console.log(`App Listening on ${port}`);
 });
 
-const updatedPollutionPointsData = aqiCalculate(pollutionPointsData);
 
-const pollutionPointsWithLatLongs = calcLatLong(updatedPollutionPointsData);
 
-// seedPollutionPoints(updatedPollutionPointsData);
+app.get('/seed-pollution-points', seedPollutionPoints)
+
+
+
 
 module.exports = { app };

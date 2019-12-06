@@ -172,7 +172,6 @@ aqiCalculate = pollutants => {
   });
   return pollutants;
 };
-
 calcLatLong = pollutants => {
   pollutants.forEach(station => {
     station.am.top_corner.lat = Number(
@@ -216,14 +215,5 @@ calcLatLong = pollutants => {
   });
   return pollutants;
 };
+module.exports = { aqiCalculate, calcLatLong };
 
-seedPollutionPoints = (req, res) => {
-  pollutionPointsData.forEach(pollutionPoint => {
-    const newPollutionPoint = new PollutionPointsModel(pollutionPoint);
-    newPollutionPoint.save();
-  });
-
-  res.send("Seeded Pollution Points");
-};
-
-module.exports = { aqiCalculate, seedPollutionPoints, calcLatLong };

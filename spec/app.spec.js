@@ -1,5 +1,3 @@
-const chai = require("chai")
-const mongoose = require('mongoose')
 const { expect } = require('chai');
 const request = require('supertest');
 const { app } = require('../server');
@@ -39,6 +37,7 @@ describe('/pollution-points', () => {
             .get('/api/pollution-points')
             .expect(200)
             .then(({ body }) => {
+                console.log(body.pollutionPoints[0].am.top_corner)
                 expect(body).to.be.an('object')
             })
     });

@@ -3,61 +3,61 @@ const pollutionPointsSchema = new mongoose.Schema({
   name: String,
   id: Number,
   pp_coordinates: {
-    lat: mongoose.Decimal128,
-    long: mongoose.Decimal128
+    lat: Number,
+    long: Number
   },
   am: {
     pollutants: {
-      no2: mongoose.Decimal128,
-      pm10: mongoose.Decimal128,
-      so2: mongoose.Decimal128,
-      o3: mongoose.Decimal128,
-      pm25: mongoose.Decimal128
+      no2: Number,
+      pm10: Number,
+      so2: Number,
+      o3: Number,
+      pm25: Number
     },
     aqi: Number,
     top_corner: {
-      lat: mongoose.Decimal128,
-      long: mongoose.Decimal128
+      lat: Number,
+      long: Number
     },
     bottom_corner: {
-      lat: mongoose.Decimal128,
-      long: mongoose.Decimal128
+      lat: Number,
+      long: Number
     }
   },
   midday: {
     pollutants: {
-      no2: mongoose.Decimal128,
-      pm10: mongoose.Decimal128,
-      so2: mongoose.Decimal128,
-      o3: mongoose.Decimal128,
-      pm25: mongoose.Decimal128
+      no2: Number,
+      pm10: Number,
+      so2: Number,
+      o3: Number,
+      pm25: Number
     },
     aqi: Number,
     top_corner: {
-      lat: mongoose.Decimal128,
-      long: mongoose.Decimal128
+      lat: Number,
+      long: Number
     },
     bottom_corner: {
-      lat: mongoose.Decimal128,
-      long: mongoose.Decimal128
+      lat: Number,
+      long: Number
     }
   },
   pm: {
     pollutants: {
-      no2: mongoose.Decimal128,
-      pm10: mongoose.Decimal128,
-      so2: mongoose.Decimal128,
-      o3: mongoose.Decimal128,
-      pm25: mongoose.Decimal128
+      no2: Number,
+      pm10: Number,
+      so2: Number,
+      o3: Number,
+      pm25: Number
     },
     aqi: Number,
     top_corner: {
-      lat: mongoose.Decimal128,
-      long: mongoose.Decimal128
+      lat: Number,
+      long: Number
     },
     bottom_corner: {
-      lat: mongoose.Decimal128,
-      long: mongoose.Decimal128
+      lat: Number,
+      long: Number
     }
   }
 });

@@ -55,7 +55,7 @@ describe('/pollution-points', () => {
             .get('/api/pollution-points')
             .expect(200)
             .then(({ body }) => {
-                expect(body.pollutionPoints[0]).to.have.keys('pp_coordinates', 'pm', 'name', 'midday', 'id', 'am', '_id', '__v')
+                expect(body.pollutionPoints[0]).to.have.keys('pp_coordinates', 'pm', 'name', 'midday', 'id', 'am', '_id')
             })
     });
 });
@@ -81,10 +81,10 @@ describe('/users PATCH', () => {
     it('updates the users geo-location', () => {
         return request(app)
             .patch('/api/users')
-            .send({ username: 'harry', current_location: '420, 666' })
+            .send({ username: 'harry', current_location: '11111, 678811111190' })
             .expect(200)
             .then(({ body }) => {
-                expect(body.user).to.have.keys('_id', 'username', 'email', "password", "current_location", '__v')
+                expect(body.user).to.have.keys('_id', 'username', 'email', "password", "current_location")
             })
     });
 });

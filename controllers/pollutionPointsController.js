@@ -8,13 +8,12 @@ const getPollutionPoints = (req, res, next) => {
   fetchPollutionPoints()
     .then(pollutionPoints => {
       const geoJSON = geoJSONPollutionPoints(pollutionPoints);
-
       const geoJSONAndPollutionPoints = {
         type: 'FeatureCollection',
         features: geoJSON,
         pollutionPoints: pollutionPoints
       };
-      // console.log('outputObj ->', outputObj);
+
       res.status(200).send(geoJSONAndPollutionPoints);
     })
     .catch(next);
@@ -23,8 +22,9 @@ const getPollutionPoints = (req, res, next) => {
 const getOnePollutionPoint = (req, res, next) => {
   const { id } = req.params;
   fetchOnePollutionPoint(id).then(pollutionPoint => {
-    res.status(200).json({ pollutionPoint });
-  });
-};
+    res.status(200).json({ pollutionPoint })
+  }).catch(next)
+}
+
 
 module.exports = { getPollutionPoints, getOnePollutionPoint };

@@ -37,9 +37,7 @@ describe('/users', () => {
   });
 });
 describe('/pollution-points', () => {
-
   it('returns an object', () => {
-
     return request(app)
       .get('/api/pollution-points')
       .expect(200)
@@ -52,7 +50,7 @@ describe('/pollution-points', () => {
       .get('/api/pollution-points')
       .expect(200)
       .then(({ body }) => {
-        expect(body.geoJSONAndPollutionPoints.pollutionPoints).to.be.an(
+        expect(body.pollutionPoints).to.be.an(
           'array'
         );
       });
@@ -62,7 +60,7 @@ describe('/pollution-points', () => {
       .get('/api/pollution-points')
       .expect(200)
       .then(({ body }) => {
-        expect(body.geoJSONAndPollutionPoints.pollutionPoints[0]).to.have.keys(
+        expect(body.pollutionPoints[0]).to.have.keys(
           'pp_coordinates',
           'pm',
           'name',
@@ -78,7 +76,7 @@ describe('/pollution-points', () => {
       .get('/api/pollution-points')
       .expect(200)
       .then(({ body }) => {
-        expect(body.geoJSONAndPollutionPoints.features[0]).to.have.keys(
+        expect(body.features[0]).to.have.keys(
           'type',
           'properties',
           'geometry'
@@ -99,7 +97,7 @@ describe('/pollution-points', () => {
       .get('/api/pollution-points')
       .expect(200)
       .then(({ body }) => {
-        expect(body.geoJSONAndPollutionPoints.pollutionPoints).to.be.an('array')
+        expect(body.pollutionPoints).to.be.an('array')
       })
   });
   it('returns an array of objects with the pollution points keys', () => {
@@ -107,7 +105,7 @@ describe('/pollution-points', () => {
       .get('/api/pollution-points')
       .expect(200)
       .then(({ body }) => {
-        expect(body.geoJSONAndPollutionPoints.pollutionPoints[0]).to.have.keys('pp_coordinates', 'pm', 'name', 'midday', 'id', 'am', '_id')
+        expect(body.pollutionPoints[0]).to.have.keys('pp_coordinates', 'pm', 'name', 'midday', 'id', 'am', '_id')
       })
   });
 });

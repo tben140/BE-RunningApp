@@ -27,10 +27,10 @@ const geoJSONPollutionPoints = pollutionPoints => {
 };
 
 const fetchOnePollutionPoint = (_id) => {
-    return PollutionPointsModel.findById(_id, (err, docs) => {
-        if (err) console.log(err);
-        return docs
-    })
+  return PollutionPointsModel.findById(_id, (err, docs) => {
+    if (err) console.log('been an error>>>', err);
+    return docs
+  })
 }
 
 module.exports = { fetchPollutionPoints, geoJSONPollutionPoints, fetchOnePollutionPoint };

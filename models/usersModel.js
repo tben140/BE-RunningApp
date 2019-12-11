@@ -1,6 +1,5 @@
 const { UserModel } = require('../db/schemas/mongooseUserModel')
 
-
 const fetchUsers = () => {
     return UserModel.find({}, (err, docs) => {
         if (err) console.log(err);
@@ -10,9 +9,7 @@ const fetchUsers = () => {
 
 const postUser = (newUser) => {
     const userToAdd = new UserModel(newUser)
-    return userToAdd.save().then(newUser => {
-        return newUser
-    })
+    return userToAdd.save()
 }
 
 const patchUser = update => {
@@ -22,8 +19,6 @@ const patchUser = update => {
             return docs;
         })
 }
-
-
 
 
 module.exports = { fetchUsers, postUser, patchUser }

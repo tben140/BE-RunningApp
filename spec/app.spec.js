@@ -167,7 +167,7 @@ it('updates the users geo-location', () => {
 describe('/pollution-point/:PP_id GET', () => {
   it('gets one pollution point ', () => {
     return request(app)
-      .get('/api/pollution-points/5df0c56a4870f2635ade79ff')
+      .get('/api/pollution-points/5df107c0b0c702706f02704a')
       .expect(200)
       .then(({ body }) => {
         expect(body.pollutionPoint).to.be.an('object')
@@ -366,6 +366,26 @@ describe('error handling', () => {
       .expect(405)
       .then(({ body }) => {
         expect(body).to.eql({ msg: 'POST method not allowed on this endpoint.' })
+      })
+  });
+});
+describe('error handler POST USER', () => {
+  it('rejects a post request when the user already exisits in the DB', () => {
+    return request(app)
+      .post('/api/users')
+      .send({
+        username: `harry`,
+        email: 'user@gmail.com',
+        password: 'qwerty',
+        current_location: '53.4860211, -2.2397307',
+        end_location: {
+          lat: 0,
+          long: 0
+        }
+      })
+      .expect(404)
+      .then(({ error }) => {
+        expect(error.text).to.equal('{"msg":"username already in use"}');
       })
   });
 });

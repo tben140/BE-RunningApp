@@ -167,7 +167,7 @@ it('updates the users geo-location', () => {
 describe('/pollution-point/:PP_id GET', () => {
   it('gets one pollution point ', () => {
     return request(app)
-      .get('/api/pollution-points/5df107c0b0c702706f02704a')
+      .get('/api/pollution-points/5df125f2bf5a897b869de11d')
       .expect(200)
       .then(({ body }) => {
         expect(body.pollutionPoint).to.be.an('object')

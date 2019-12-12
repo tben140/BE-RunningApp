@@ -171,81 +171,81 @@ aqiCalculate = pollutants => {
 };
 calcLatLong = pollutants => {
   //Add scaling facgtor to remaining
-  const scalingFactor = 1.25;
+  const scalingFactor = 0.1;
 
   pollutants.forEach(station => {
     station.am.top_corner.lat = Number(
       (
-        Number(station.pp_coordinates.lat) -
-        0.006 * scalingFactor * station.am.aqi
+        Number(station.pp_coordinates.lat) +
+        0.003 * scalingFactor * station.am.aqi
       ).toFixed(6)
     );
     station.am.top_corner.long = Number(
       (
         Number(station.pp_coordinates.long) -
-        0.002 * scalingFactor * station.am.aqi
+        0.005 * scalingFactor * station.am.aqi
       ).toFixed(6)
     );
     station.am.bottom_corner.lat = Number(
       (
-        Number(station.pp_coordinates.lat) +
-        0.006 * scalingFactor * station.am.aqi
+        Number(station.pp_coordinates.lat) -
+        0.003 * scalingFactor * station.am.aqi
       ).toFixed(6)
     );
     station.am.bottom_corner.long = Number(
       (
         Number(station.pp_coordinates.long) +
-        0.002 * scalingFactor * station.am.aqi
+        0.005 * scalingFactor * station.am.aqi
       ).toFixed(6)
     );
 
     station.midday.top_corner.lat = Number(
       (
-        Number(station.pp_coordinates.lat) -
-        0.006 * scalingFactor * station.midday.aqi
+        Number(station.pp_coordinates.lat) +
+        0.003 * scalingFactor * station.midday.aqi
       ).toFixed(6)
     );
     station.midday.top_corner.long = Number(
       (
         Number(station.pp_coordinates.long) -
-        0.002 * scalingFactor * station.midday.aqi
+        0.005 * scalingFactor * station.midday.aqi
       ).toFixed(6)
     );
     station.midday.bottom_corner.lat = Number(
       (
-        Number(station.pp_coordinates.lat) +
-        0.006 * scalingFactor * station.midday.aqi
+        Number(station.pp_coordinates.lat) -
+        0.003 * scalingFactor * station.midday.aqi
       ).toFixed(6)
     );
     station.midday.bottom_corner.long = Number(
       (
         Number(station.pp_coordinates.long) +
-        0.002 * scalingFactor * station.midday.aqi
+        0.005 * scalingFactor * station.midday.aqi
       ).toFixed(6)
     );
 
     station.pm.top_corner.lat = Number(
       (
-        Number(station.pp_coordinates.lat) -
-        0.006 * scalingFactor * station.pm.aqi
+        Number(station.pp_coordinates.lat) +
+        0.003 * scalingFactor * station.pm.aqi
       ).toFixed(6)
     );
     station.pm.top_corner.long = Number(
       (
         Number(station.pp_coordinates.long) -
-        0.002 * scalingFactor * station.pm.aqi
+        0.005 * scalingFactor * station.pm.aqi
       ).toFixed(6)
     );
     station.pm.bottom_corner.lat = Number(
       (
-        Number(station.pp_coordinates.lat) +
-        0.006 * scalingFactor * station.pm.aqi
+        Number(station.pp_coordinates.lat) -
+        0.003 * scalingFactor * station.pm.aqi
       ).toFixed(6)
     );
     station.pm.bottom_corner.long = Number(
       (
         Number(station.pp_coordinates.long) +
-        0.002 * scalingFactor * station.pm.aqi
+        0.005 * scalingFactor * station.pm.aqi
       ).toFixed(6)
     );
   });

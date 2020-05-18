@@ -6,7 +6,7 @@ steps:
   #Run seed file
 - name: node
   entrypoint: npm
-  args: ['run seed']
+  args: ['run', 'seed']
 # Run server
 - name: node
   entrypoint: npm

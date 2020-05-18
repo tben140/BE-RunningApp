@@ -3,7 +3,12 @@ steps:
 - name: node
   entrypoint: npm
   args: ['install']
-# Run tests
+  #Run seed file
+  # Install dependencies
+- name: node
+  entrypoint: npm
+  args: ['run seed']
+# Run server
 - name: node
   entrypoint: npm
   args: ['start']

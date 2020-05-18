@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon server.js",
+    "seed": "node seed-atlas.js",
     "test": "mocha spec/app.spec.js"
   },
   "keywords": [],

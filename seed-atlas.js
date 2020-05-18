@@ -1,3 +1,4 @@
+require("dotenv").config();
 const { pollutionPointsData } = require("./db/data/development-data/index.js");
 const { usersData } = require("./db/data/development-data/index.js");
 const {
@@ -7,7 +8,7 @@ const {
 
 const MongoClient = require('mongodb').MongoClient;
 
-const url = "mongodb+srv://project-bhilt:Northcoders@project-bhilt-ze2oc.gcp.mongodb.net/project-bhilt?retryWrites=true&w=majority";
+const url = process.env.DB_URI;
 const dbName = 'project-bhilt';
 
 (async function () {

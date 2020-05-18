@@ -8,7 +8,8 @@ const {
 
 const MongoClient = require('mongodb').MongoClient;
 
-const url = process.env.DB_URI;
+// const url = process.env.DB_URI;
+const url = 'mongodb+srv://test:test@cluster0-frwlz.gcp.mongodb.net/test?retryWrites=true&w=majority'
 const dbName = 'project-bhilt';
 
 console.log("url =>>", url);

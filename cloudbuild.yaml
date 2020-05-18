@@ -1,6 +1,6 @@
 steps:
 # Install dependencies
-- name: npm install
+- name: npm-install
   entrypoint: npm
   args: ['install']
   #Run seed file

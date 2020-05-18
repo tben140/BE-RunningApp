@@ -10,7 +10,10 @@ const { customErrors, allOtherErrors } = require('./utils/errorHandler')
 app.use(express.json());
 app.use("/api", apiRouter);
 
-mongoose.connect(process.env.DB_URI, { useNewUrlParser: true });
+// mongoose.connect(process.env.DB_URI, { useNewUrlParser: true });
+
+const url = 'mongodb+srv://test:test@cluster0-frwlz.gcp.mongodb.net/test?retryWrites=true&w=majority'
+mongoose.connect(url, { useNewUrlParser: true });
 
 app.listen(port, () => {
   console.log(`App Listening on ${port}`);

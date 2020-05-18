@@ -4,10 +4,10 @@ steps:
   entrypoint: npm
   args: ['install']
   #Run seed file
-- name: npm run seed
+- name: npm-run-seed
   entrypoint: npm
   args: ['run seed']
 # Run server
-- name: npm start
+- name: npm-start
   entrypoint: npm
   args: ['start']

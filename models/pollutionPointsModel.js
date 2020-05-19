@@ -1,5 +1,5 @@
 const {
-  PollutionPointsModel
+  PollutionPointsModel,
 } = require('../db/schemas/mongoosePollutionPointsModel');
 
 const fetchPollutionPoints = () => {
@@ -9,9 +9,8 @@ const fetchPollutionPoints = () => {
   });
 };
 
-
-const geoJSONPollutionPoints = pollutionPoints => {
-  return pollutionPoints.map(pollutionPoint => {
+const geoJSONPollutionPoints = (pollutionPoints) => {
+  return pollutionPoints.map((pollutionPoint) => {
     const rObj = {};
     rObj.type = 'Feature';
     rObj.properties = {};
@@ -19,8 +18,8 @@ const geoJSONPollutionPoints = pollutionPoints => {
       type: 'Point',
       coordinates: [
         pollutionPoint.pp_coordinates.long,
-        pollutionPoint.pp_coordinates.lat
-      ]
+        pollutionPoint.pp_coordinates.lat,
+      ],
     };
     return rObj;
   });
@@ -29,11 +28,12 @@ const geoJSONPollutionPoints = pollutionPoints => {
 const fetchOnePollutionPoint = (_id) => {
   return PollutionPointsModel.findById(_id, (err, docs) => {
     if (err) console.log('been an error>>>', err);
-    return docs
-  })
-}
+    return docs;
+  });
+};
 
-module.exports = { fetchPollutionPoints, geoJSONPollutionPoints, fetchOnePollutionPoint };
-
-
-
+module.exports = {
+  fetchPollutionPoints,
+  geoJSONPollutionPoints,
+  fetchOnePollutionPoint,
+};

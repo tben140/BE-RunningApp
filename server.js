@@ -14,7 +14,7 @@ app.use('/api', apiRouter);
 const url =
   'mongodb+srv://test:test@cluster0-frwlz.gcp.mongodb.net/test?retryWrites=true&w=majority';
 mongoose
-  .connect(url, { useNewUrlParser: true })
+  .connect(url, { useNewUrlParser: true, dbName: 'project-bhilt' })
   .catch((error) => console.log('MONGOOSE CONNECT ERROR ->>', error));
 
 app.listen(port, () => {

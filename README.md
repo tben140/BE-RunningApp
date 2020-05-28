@@ -8,15 +8,15 @@ This repo is the backend repo for the Saviar Northcoders project group. The appl
 
 ## Building the API
 
-The API uses a NoSQL database (Mongo DB / Mongo DB Atlas) and is built using Mongoose and Express. The code was then hosted on Google Cloud Platform [here.](https://project-bhilt.appspot.com/api/)
+The API uses a NoSQL database (Mongo DB / Mongo DB Atlas) and is built using Mongoose and Express. The code was then hosted on Google Cloud Platform [here](https://spheric-mesh-269023.nw.r.appspot.com/api).
 
-The front end repo can be found [here.](https://github.com/BHILT-RunningApp/Front-End-React-Native-XCode)
+The front end repo can be found [here](https://github.com/tben140/Running-App-Frontend).
 
 ## Getting Started
 
 To run the project locally, clone this respository by running the code below in your terminal:
 
-    git clone https://github.com/BHILT-RunningApp/BE-RunningApp.git
+    git clone https://github.com/tben140/Running-App-Backend.git
 
 `cd` into the directory and install the required dependencies ( dotenv(^8.2.0), express(^4.17.1), mongoose(^5.7.13)) by running the code below in the directory:
 

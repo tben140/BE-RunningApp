@@ -1,6 +1,10 @@
 # Northcoders Final Project Backend
 
-This repo is the back end repo for the Saviar Northcoders project group. The application that we built is a running app that will create a running route for the user, avoiding the most heavily polluted local areas. This back end builds the API that the front end interacts with.
+This repo is the backend repo for the Saviar Northcoders project group. The application that we built is a running app that will create a running route for the user, avoiding the most heavily polluted local areas. This backend builds the API that the frontend interacts with.
+
+<p align="center">
+    <img alt="Screenshot" src="docs/screenshots/app-phone.png" width="300" />
+</p>
 
 ## Building the API
 
@@ -18,7 +22,7 @@ To run the project locally, clone this respository by running the code below in 
 
     npm install
 
-You will need to create a .env file which should be git-ignored and should look like the below code: 
+You will need to create a .env file which should be git-ignored and should look like the below code:
 
     DB_URI='mongodb+srv://<YOUR PROJECT NAME>:<YOUR PASSWORD>@<YOUR PROJECT NAME>-ze2oc.gcp.mongodb.net/<YOUR PROJECT NAME>?retryWrites=true&w=majority'
 
@@ -43,9 +47,9 @@ GET /api/pollution-points/:id
 
 ```
 
-## Built With 
+## Built With
 
 - [Node.js](https://nodejs.org/en/) - Javascript runtime
 - [Mongo DB Atlas](https://www.mongodb.com/cloud/atlas/lp/general/try?utm_source=google&utm_campaign=gs_emea_united%20kingdom_search_brand_atlas_desktop&utm_term=mongo%20db%20atlas&utm_medium=cpc_paid_search&utm_ad=e&_bt=335278754561&_bn=g&gclid=EAIaIQobChMI7-OYp6Ww5gIVRrDtCh0GSwHLEAAYASAAEgLtKvD_BwE) - Document based NoSQL database
 - [Express](https://expressjs.com/) - a web framework for Node.js
-- [Mongoose](https://mongoosejs.com/) - Mongo object modelling 
+- [Mongoose](https://mongoosejs.com/) - Mongo object modelling

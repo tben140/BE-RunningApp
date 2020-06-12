@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  app:
+    container_name: running-app-backend
+    # image: node:12
+    # command: sh -c "npm install && node server.js"
+    build: .
+    ports:
+      - 8080:8080
